@@ -45,7 +45,7 @@ fetch_event_donations <- function(
     return(html_table(fetch_donation_page(event, min_page)))
   }
 
-  raw_sgdq_pages <- lapply(min_page:total_pages, function(x) { fetch_donation_page(x, event) } )
+  raw_sgdq_pages <- lapply(min_page:total_pages, function(x) { fetch_donation_page(event, x) } )
 
   raw_sgdq_donations <- bind_rows(sapply(raw_sgdq_pages, html_table))
 
