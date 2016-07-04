@@ -30,15 +30,22 @@ At the moment the following events are available:
 
 The `event` argument of the `fetch_*` functions in the package refers to any one of the names above.
 
+### Available data types
+
+Currently you can fetch donations and runs data. Each data type has an associated `fetch_*` and `tidy_*` functions:
+
+    tidy_donations(fetch_donations("sgdq2015", 2, 5))
+    tidy_runs(fetch_runs("sgdq2015"))
+
 ### Dealing with pagination
 
 The GDQ donation tracker displays a maximum of 50 donations per page. gdqr lets you download donation information from a range of pages.
 
 The following commands will download all donations from pages 10 to 20, pages 10 and onwards, and up to page 20, respectively. 
 
-    raw_sgdq2015 <- fetch_event_donations("sgdq2015", min_page = 10, max_page = 20)
-    raw_sgdq2015 <- fetch_event_donations("sgdq2015", min_page = 10)
-    raw_sgdq2015 <- fetch_event_donations("sgdq2015", max_page = 20)
+    raw_sgdq2015 <- fetch_donations("sgdq2015", min_page = 10, max_page = 20)
+    raw_sgdq2015 <- fetch_donations("sgdq2015", min_page = 10)
+    raw_sgdq2015 <- fetch_donations("sgdq2015", max_page = 20)
 
 Note that the donations are downloaded in time order so the first page contains the earliest donations and the last page contains the last donations made towards the end of the event.
 
