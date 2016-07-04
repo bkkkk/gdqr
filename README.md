@@ -4,11 +4,13 @@ This package helps you download the donation data from the Games Done Quick even
 fetches the data directly from the [GDQ](http://gamesdonequick.com/) site and even contains a tidying
 function to clean up the data so it's ready for analysis.
 
+This package is in pre-Alpha stage.
+
 ## Installation
 
-This package is not on CRAN. To install it from Github:
+Package is not available on CRAN. To install it from Github:
 
-    devtools::install_github("bkkkk/gdqr")
+    devtools::install_github("bkkkk/gdqr", ref = "develop")
 
 ## Usage
 
