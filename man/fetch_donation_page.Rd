@@ -12,7 +12,7 @@ fetch_donation_page(event, page)
 \item{page}{the page number from which to pull donations}
 }
 \value{
-the html donations page for the event and page specified
+the html donations page
 }
 \description{
 Get the donations html page for the event specified
@@ -20,5 +20,6 @@ Get the donations html page for the event specified
 \examples{
 
 \donttest{fetch_donation_page("sgdq", 1)}
+
 }
 

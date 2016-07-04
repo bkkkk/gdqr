@@ -3,6 +3,8 @@
 #' @param event name of event to pull donations from
 #'
 #' @return url of the donations page for the specified event
+#'
+#' @importFrom httr modify_url
 build_gdq_donations_url <- function(event) {
   path <- paste0("tracker/donations/", event)
   url <- modify_url("https://gamesdonequick.com", path = path)
@@ -14,13 +16,15 @@ build_gdq_donations_url <- function(event) {
 #' @param event the name of the event from which to pull the donations page
 #' @param page the page number from which to pull donations
 #'
-#' @return the html donations page for the event and page specified
+#' @return the html donations page
 #'
 #' @examples
 #'
 #' \donttest{fetch_donation_page("sgdq", 1)}
+#'
+#' @importFrom httr GET user_agent status_code http_type
 fetch_donation_page <- function(event, page) {
-  ua <- user_agent("http://github.com/bkkkk/sgdqr")
+  ua <- user_agent("http://github.com/bkkkk/gdqr")
 
   url <- build_gdq_donations_url(event)
   resp <- GET(url, ua, query = list(order = "1", page = as.character(page)))
@@ -36,5 +40,5 @@ fetch_donation_page <- function(event, page) {
     )
   }
 
-  return(preprocess_response(resp))
+  return(read_html(resp))
 }
