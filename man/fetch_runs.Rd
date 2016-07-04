@@ -6,15 +6,10 @@
 \usage{
 fetch_runs(event = c("cgdq", "agdq2011", "jrdq", "sgdq2011", "agdq2012",
   "sgdq2012", "spook", "agdq2013", "sgdq2013", "agdq2014", "sgdq2014",
-  "agdq2015", "sgdq2015", "agdq2016", "sgdq2016"), min_page = 1,
-  max_page = 0)
+  "agdq2015", "sgdq2015", "agdq2016", "sgdq2016"))
 }
 \arguments{
 \item{event}{name of the event}
-
-\item{min_page}{first page to include}
-
-\item{max_page}{last page to include}
 }
 \value{
 data frame containing run information
@@ -26,5 +21,6 @@ Fetch runs data from GDQ for a given event
 \donttest{fetch_runs_data("sgdq2016")}
 
 \donttest{fetch_runs_data("sgdq2016", 2, 30)}
+
 }
 
