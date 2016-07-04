@@ -29,6 +29,8 @@ fetch_donation_page <- function(event, page) {
   url <- build_gdq_donations_url(event)
   resp <- GET(url, ua, query = list(order = "1", page = as.character(page)))
 
+  print(paste0("Fetching ", event, " page ", page))
+
   if (http_type(resp) != "text/html") {
     stop("Request did not return html", call. = FALSE)
   }
