@@ -44,7 +44,7 @@ Note that the donations are downloaded in time order so the first page contains 
 
 ## Todo
 
-* [*] Add support for fetching runs data
+* [x] Add support for fetching runs data
 * [ ] Add support for fetching bid data
 * [ ] Add support for fetching prizes data
 * [ ] Have a better way of dealing with event codenames
