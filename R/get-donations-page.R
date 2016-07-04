@@ -15,7 +15,6 @@ build_gdq_donations_url <- function(event) {
 #' @param page the page number from which to pull donations
 #'
 #' @return the html donations page for the event and page specified
-#' @export
 #'
 #' @examples
 #'
