@@ -17,7 +17,7 @@ Package is not available on CRAN. To install it from Github:
 In order to obtain all data for SGDQ2015 and tidy it:
 
     library(gdqr)
-    raw_sgdq2015 <- fetch_event_donations(event = "sgdq2015")
+    raw_sgdq2015 <- fetch_donations(event = "sgdq2015")
     tidy_sgdq2015 <- tidy_donations(raw_sgdq2015)
 
 ### Available events
