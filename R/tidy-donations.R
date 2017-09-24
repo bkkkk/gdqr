@@ -19,7 +19,7 @@ tidy_donations <- function(data) {
   data <- as_tibble(data)
   data <- rename_(
     data,
-    donator = "NameAscDsc",
+    donator = "Name",
     date = as.name("Time ReceivedAscDsc"),
     amount = "AmountAscDsc",
     with_comment = "Comment"

@@ -2,7 +2,7 @@ Package: gdqr
 Type: Package
 Title: Access data on donations made during Games Done Quick events from R
 Version: 0.1.9000
-Authors@R: person("Jacobo", "Blanco", email = "jayb@gmail.com", role = c("aut", "cre"))
+Authors@R: person("Jacobo", "Blanco", email = "jayb88@gmail.com", role = c("aut", "cre"))
 Description:
   This package contains functions to pull data on donations made during the
   [Games Done Quick](www.gamesdonequick.com) speedrunning charity gaming events. An associated

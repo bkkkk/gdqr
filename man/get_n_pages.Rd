@@ -4,10 +4,10 @@
 \alias{get_n_pages}
 \title{Get the number of available pages}
 \usage{
-get_n_pages(a_page)
+get_n_pages(x)
 }
 \arguments{
-\item{a_page}{any XML object}
+\item{x}{any XML object}
 }
 \value{
 number of pages availabl

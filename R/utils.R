@@ -1,10 +1,10 @@
 #' Get the number of available pages
 #'
-#' @param a_page any XML object
+#' @param x any XML object
 #'
 #' @return number of pages availabl
 #'
-#' @importFrom xml2 xml_double xml_contents xml_find_all
-get_n_pages <- function(a_page) {
-  max(xml_double(xml_contents(xml_find_all(a_page, xpath = ".//select/option"))))
+#' @importFrom xml2 xml_double xml_find_first
+get_n_pages <- function(x) {
+  xml_double(xml_find_first(x, xpath = ".//input[@id='page']/@max"))
 }
