@@ -22,4 +22,3 @@ donations <- tidy_donations(donations)
 }
 
 }
-

@@ -14,15 +14,8 @@
 #'
 #' @importFrom dplyr bind_rows
 #' @importFrom rvest html_table
-fetch_donations <- function(
-  event = c("cgdq", "agdq2011", "jrdq", "sgdq2011", "agdq2012", "sgdq2012",
-            "spook", "agdq2013", "sgdq2013", "agdq2014", "sgdq2014", "agdq2015",
-            "sgdq2015", "agdq2016", "sgdq2016"),
-  min_page = 1,
-  max_page = 0) {
-
-  event <- match.arg(event)
-
+#' @importFrom tibble as_tibble
+fetch_donations <- function(event = c("cgdq", "agdq2011", "jrdq", "agdq2016", "sgdq2016"), min_page = 1, max_page = 0) {
   if (event == "") {
     stop("You must specify the event name")
   }
@@ -49,6 +42,8 @@ fetch_donations <- function(
   raw_pages <- lapply(min_page:total_pages, function(x) { fetch_paginated_data(event, "donations", x) } )
 
   raw_donations <- bind_rows(sapply(raw_pages, html_table))
+
+  raw_donations <- as_tibble(raw_donations)
 
   return(raw_donations)
 }

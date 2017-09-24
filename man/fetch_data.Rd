@@ -24,4 +24,3 @@ Get an html page from a data type
 \donttest{fetch_data("sgdq", "donations")}
 
 }
-

@@ -24,4 +24,3 @@ Get an html page for a paginated data type
 fetch_paginated_data("sgdq2015", "donations", 1)
 }
 }
-

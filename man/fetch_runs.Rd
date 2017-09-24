@@ -4,9 +4,7 @@
 \alias{fetch_runs}
 \title{Fetch runs data from GDQ for a given event}
 \usage{
-fetch_runs(event = c("cgdq", "agdq2011", "jrdq", "sgdq2011", "agdq2012",
-  "sgdq2012", "spook", "agdq2013", "sgdq2013", "agdq2014", "sgdq2014",
-  "agdq2015", "sgdq2015", "agdq2016", "sgdq2016"))
+fetch_runs(event = c("cgdq", "agdq2011", "jrdq", "agdq2016", "sgdq2016"))
 }
 \arguments{
 \item{event}{name of the event}
@@ -23,4 +21,3 @@ Fetch runs data from GDQ for a given event
 \donttest{fetch_runs_data("sgdq2016", 2, 30)}
 
 }
-

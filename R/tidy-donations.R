@@ -12,11 +12,11 @@
 #' donations <- tidy_donations(donations)
 #' }
 #'
-#' @importFrom tibble tbl_df
+#' @importFrom tibble as_tibble
 #' @importFrom dplyr mutate rename_ if_else
 #' @importFrom lubridate mdy_hms
 tidy_donations <- function(data) {
-  data <- tbl_df(data)
+  data <- as_tibble(data)
   data <- rename_(
     data,
     donator = "NameAscDsc",

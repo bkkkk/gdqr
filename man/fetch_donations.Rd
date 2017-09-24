@@ -4,10 +4,8 @@
 \alias{fetch_donations}
 \title{Fetch donations from GDQ across multiple pages}
 \usage{
-fetch_donations(event = c("cgdq", "agdq2011", "jrdq", "sgdq2011", "agdq2012",
-  "sgdq2012", "spook", "agdq2013", "sgdq2013", "agdq2014", "sgdq2014",
-  "agdq2015", "sgdq2015", "agdq2016", "sgdq2016"), min_page = 1,
-  max_page = 0)
+fetch_donations(event = c("cgdq", "agdq2011", "jrdq", "agdq2016", "sgdq2016"),
+  min_page = 1, max_page = 0)
 }
 \arguments{
 \item{event}{name of the event}
@@ -28,4 +26,3 @@ Fetch donations from GDQ across multiple pages
 \donttest{fetch_donations("sgdq2016", 2, 30)}
 
 }
-

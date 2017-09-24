@@ -17,16 +17,10 @@ fetch_data <- function(event, type, query = NULL) {
   path <- paste0("tracker/", type, "/", event)
 
   resp <- GET("https://gamesdonequick.com", ua, query = query, path = path)
+  resp <- stop_for_status(resp)
 
   if (http_type(resp) != "text/html") {
     stop("Request did not return html", call. = FALSE)
-  }
-
-  if (status_code(resp) != 200) {
-    stop(
-      sprintf("Grabbing donations page failed [%s]", status_code(resp)),
-      call. = FALSE
-    )
   }
 
   return(read_html(resp))

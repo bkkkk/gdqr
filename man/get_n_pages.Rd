@@ -15,4 +15,3 @@ number of pages availabl
 \description{
 Get the number of available pages
 }
-

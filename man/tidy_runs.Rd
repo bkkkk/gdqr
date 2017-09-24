@@ -23,4 +23,3 @@ tidy_sgdq2015 <- tidy_runs(raw_runs)
 }
 
 }
-
