@@ -10,14 +10,14 @@
 #'
 #' \donttest{fetch_data("sgdq", "donations")}
 #'
-#' @importFrom httr GET user_agent status_code http_type modify_url
+#' @importFrom httr GET user_agent status_code http_type modify_url stop_for_status
 #' @importFrom xml2 read_html
 fetch_data <- function(event, type, query = NULL) {
   ua <- user_agent("http://github.com/bkkkk/gdqr")
   path <- paste0("tracker/", type, "/", event)
 
   resp <- GET("https://gamesdonequick.com", ua, query = query, path = path)
-  resp <- stop_for_status(resp)
+  resp <- stop_for_status(resp, paste("Retrieve", event, type))
 
   if (http_type(resp) != "text/html") {
     stop("Request did not return html", call. = FALSE)
