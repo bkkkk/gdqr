@@ -10,23 +10,28 @@ This package is in pre-Alpha stage.
 
 Package is not available on CRAN. To install it from Github:
 
-    devtools::install_github("bkkkk/gdqr", ref = "develop")
-
+```R
+devtools::install_github("bkkkk/gdqr", ref = "develop")
+```
 ## Usage
 
 In order to obtain all data for SGDQ2015 and tidy it:
 
-    library(gdqr)
-    raw_sgdq2015 <- fetch_donations(event = "sgdq2015")
-    tidy_sgdq2015 <- tidy_donations(raw_sgdq2015)
+```R
+library(gdqr)
+raw_sgdq2015 <- fetch_donations(event = "sgdq2015")
+tidy_sgdq2015 <- tidy_donations(raw_sgdq2015)
+```
 
 ### Available events
 
 At the moment the following events are available:
 
-    event <- c("cgdq", "agdq2011", "jrdq", "sgdq2011", "agdq2012", "sgdq2012",
-               "spook", "agdq2013", "sgdq2013", "agdq2014", "sgdq2014", "agdq2015",
-               "sgdq2015", "agdq2016", "sgdq2016")
+```R
+event <- c("cgdq", "agdq2011", "jrdq", "sgdq2011", "agdq2012", "sgdq2012",
+           "spook", "agdq2013", "sgdq2013", "agdq2014", "sgdq2014", "agdq2015",
+           "sgdq2015", "agdq2016", "sgdq2016")
+```
 
 The `event` argument of the `fetch_*` functions in the package refers to any one of the names above.
 
@@ -34,8 +39,10 @@ The `event` argument of the `fetch_*` functions in the package refers to any one
 
 Currently you can fetch donations and runs data. Each data type has an associated `fetch_*` and `tidy_*` functions:
 
-    tidy_donations(fetch_donations("sgdq2015", 2, 5))
-    tidy_runs(fetch_runs("sgdq2015"))
+```R
+tidy_donations(fetch_donations("sgdq2015", 2, 5))
+tidy_runs(fetch_runs("sgdq2015"))
+```
 
 ### Dealing with pagination
 
@@ -43,9 +50,11 @@ The GDQ donation tracker displays a maximum of 50 donations per page. gdqr lets 
 
 The following commands will download all donations from pages 10 to 20, pages 10 and onwards, and up to page 20, respectively. 
 
-    raw_sgdq2015 <- fetch_donations("sgdq2015", min_page = 10, max_page = 20)
-    raw_sgdq2015 <- fetch_donations("sgdq2015", min_page = 10)
-    raw_sgdq2015 <- fetch_donations("sgdq2015", max_page = 20)
+```R
+raw_sgdq2015 <- fetch_donations("sgdq2015", min_page = 10, max_page = 20)
+raw_sgdq2015 <- fetch_donations("sgdq2015", min_page = 10)
+raw_sgdq2015 <- fetch_donations("sgdq2015", max_page = 20)
+```
 
 Note that the donations are downloaded in time order so the first page contains the earliest donations and the last page contains the last donations made towards the end of the event.
 
